@@ -1,6 +1,6 @@
 import type { Task, Analytics, Recommendations } from "../types/task";
 
-const API_BASE_URL = "http://localhost:4005/api";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const taskApi = {
   async createTaskWithAI(naturalLanguageInput: string): Promise<Task> {
