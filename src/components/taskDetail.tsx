@@ -78,6 +78,8 @@ export default function TaskDetail({
     return colors[complexity as keyof typeof colors] || colors.medium;
   };
 
+  console.log("subtask",task);
+  
   return (
     <div className="max-w-5xl">
       <motion.button
@@ -261,7 +263,7 @@ export default function TaskDetail({
             </p>
           </div>
 
-          {(!task.subtasks || task.subtasks.length === 0) && (
+          {(!task.subTasks || task.subTasks.length === 0) && (
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -275,9 +277,9 @@ export default function TaskDetail({
           )}
         </div>
 
-        {task.subtasks && task.subtasks.length > 0 ? (
+        {task.subTasks && task.subTasks.length > 0 ? (
           <div className="space-y-3">
-            {task.subtasks.map((subtask, index) => (
+            {task.subTasks.map((subtask, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}

@@ -14,7 +14,7 @@ export interface Task {
     suggestedTags: string[];
     insights: string[];
   };
-  subtasks?: Subtask[];
+  subTasks?: Subtask[];
 }
 
 export interface Subtask {
